@@ -8,7 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.sonusourav.atlys.domain.usecases.UseCases
 import com.sonusourav.atlys.utils.Constants
 import com.sonusourav.atlys.utils.NetworkResult
-import com.sonusourav.atlys.data.model.movies.MovieItem
+import com.sonusourav.atlys.data.model.MovieDetailResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,8 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class SearchPageViewModel @Inject constructor(val useCases: UseCases) : ViewModel() {
 
-    private var _searchMoviePagingItems = mutableStateListOf<MovieItem>()
-    val searchMoviePagingItems: List<MovieItem> = _searchMoviePagingItems
+    private var _searchMoviePagingItems = mutableStateListOf<MovieDetailResponse>()
+    val searchMoviePagingItems: List<MovieDetailResponse> = _searchMoviePagingItems
 
     private val _apiError = mutableStateOf(false)
     val apiError: State<Boolean> = _apiError

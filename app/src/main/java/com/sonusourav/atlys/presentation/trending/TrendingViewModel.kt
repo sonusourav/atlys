@@ -10,14 +10,14 @@ import javax.inject.Inject
 import com.sonusourav.atlys.utils.NetworkResult
 import com.sonusourav.atlys.domain.usecases.UseCases
 import com.sonusourav.atlys.utils.Constants
-import com.sonusourav.atlys.data.model.movies.MovieItem
+import com.sonusourav.atlys.data.model.MovieDetailResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 
 @HiltViewModel
 class TrendingViewModel @Inject constructor(useCases: UseCases) : ViewModel() {
 
-    private var _trendingMoviesList = mutableStateListOf<MovieItem>()
-    val trendingMoviesList: List<MovieItem> = _trendingMoviesList
+    private var _trendingMoviesList = mutableStateListOf<MovieDetailResponse>()
+    val trendingMoviesList: List<MovieDetailResponse> = _trendingMoviesList
 
     private var _isLoading = mutableStateOf(false)
     val isLoading: State<Boolean> = _isLoading

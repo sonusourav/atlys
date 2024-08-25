@@ -29,10 +29,10 @@ import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.sonusourav.atlys.R
-import com.sonusourav.atlys.data.model.movies.MovieItem
+import com.sonusourav.atlys.data.model.MovieDetailResponse
 
 @Composable
-fun TrendingMovieItem(item: MovieItem, modifier: Modifier = Modifier, onItemClick: () -> Unit) {
+fun TrendingMovieItem(item: MovieDetailResponse, modifier: Modifier = Modifier, onItemClick: () -> Unit) {
     Card(
         modifier = Modifier
             .padding(10.dp)
@@ -57,7 +57,7 @@ fun TrendingMovieItem(item: MovieItem, modifier: Modifier = Modifier, onItemClic
                     .size(172.dp), loading = {
                     val composition by rememberLottieComposition(
                         LottieCompositionSpec.RawRes(
-                            R.raw.anim_img_loading
+                            R.raw.anim_loading
                         )
                     )
                     LottieAnimation(

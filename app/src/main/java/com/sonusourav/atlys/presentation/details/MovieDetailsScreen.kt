@@ -25,7 +25,7 @@ import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.sonusourav.atlys.R
-import com.sonusourav.atlys.data.model.details.MovieDetailsResponse
+import com.sonusourav.atlys.data.model.MovieDetailResponse
 import com.sonusourav.atlys.presentation.details.components.ToolBar
 import com.sonusourav.atlys.presentation.trending.components.ErrorView
 import com.sonusourav.atlys.presentation.trending.components.Loader
@@ -46,7 +46,7 @@ fun MovieDetailsScreen(
         ) {
             val details = viewModel.movieDetailsResponse.value
 
-            if (details.id != null) {
+            if (details.movieId != null) {
                 LazyColumn(modifier = Modifier.padding(vertical = 5.dp), content = {
                     item { ItemPoster(details) }
                     item { ItemTitle(details) }
@@ -61,7 +61,7 @@ fun MovieDetailsScreen(
 
 
 @Composable
-fun ItemPoster(response: MovieDetailsResponse) {
+fun ItemPoster(response: MovieDetailResponse) {
     Box(modifier = Modifier.padding(horizontal = 15.dp)) {
 
         AsyncImage(
@@ -80,7 +80,7 @@ fun ItemPoster(response: MovieDetailsResponse) {
 
 @Composable
 fun ItemTitle(
-    response: MovieDetailsResponse,
+    response: MovieDetailResponse,
 ) {
 
     Spacer(modifier = Modifier.height(20.dp))
@@ -99,7 +99,7 @@ fun ItemTitle(
 }
 
 @Composable
-fun ItemDescription(response: MovieDetailsResponse) {
+fun ItemDescription(response: MovieDetailResponse) {
     Spacer(modifier = Modifier.height(15.dp))
 
     val lineHeight = MaterialTheme.typography.h6.fontSize * 4 / 3

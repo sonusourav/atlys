@@ -3,12 +3,12 @@ package com.sonusourav.atlys.di
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.sonusourav.atlys.BuildConfig
-import com.sonusourav.atlys.data.ApiService
-import com.sonusourav.atlys.domain.MovieRepository
+import com.sonusourav.atlys.data.api.ApiService
+import com.sonusourav.atlys.data.repository.MovieRepository
 import com.sonusourav.atlys.domain.usecases.UseCases
-import com.sonusourav.atlys.domain.usecases.details.MovieDetailsUseCase
-import com.sonusourav.atlys.domain.usecases.search_movie.SearchMoviesUsecase
-import com.sonusourav.atlys.domain.usecases.trending.TrendingMoviesUseCase
+import com.sonusourav.atlys.domain.usecases.MovieDetailsUseCase
+import com.sonusourav.atlys.domain.usecases.SearchMoviesUsecase
+import com.sonusourav.atlys.domain.usecases.TrendingMoviesUseCase
 import com.sonusourav.atlys.utils.Constants.CONNECT_TIMEOUT
 import com.sonusourav.atlys.utils.Constants.READ_TIMEOUT
 import com.sonusourav.atlys.utils.Constants.WRITE_TIMEOUT

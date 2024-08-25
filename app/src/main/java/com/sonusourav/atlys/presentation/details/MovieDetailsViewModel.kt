@@ -1,20 +1,20 @@
 package com.sonusourav.atlys.presentation.details
 
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.launch
-import javax.inject.Inject
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateMapOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
-import com.sonusourav.atlys.data.model.details.MovieDetailsResponse
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.sonusourav.atlys.data.model.MovieDetailResponse
 import com.sonusourav.atlys.domain.usecases.UseCases
 import com.sonusourav.atlys.utils.Constants
 import com.sonusourav.atlys.utils.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class MovieDetailsViewModel @Inject constructor(
@@ -22,9 +22,10 @@ class MovieDetailsViewModel @Inject constructor(
 ) :
     ViewModel() {
 
-    private val _movieDetailsResponse: MutableState<MovieDetailsResponse> =
-        mutableStateOf(MovieDetailsResponse())
-    val movieDetailsResponse: State<MovieDetailsResponse> = _movieDetailsResponse
+    private val _movieDetailsResponse: MutableState<MovieDetailResponse> = mutableStateOf(
+        MovieDetailResponse()
+    )
+    val movieDetailsResponse: State<MovieDetailResponse> = _movieDetailsResponse
 
     private val _apiError = mutableStateOf(false)
     val apiError: State<Boolean> = _apiError

@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -17,11 +18,11 @@ import com.sonusourav.atlys.R
 
 @Composable
 fun Loader(modifier: Modifier = Modifier, isLoading: Boolean) {
-    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.anim_loading))
+    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.anim_img_loading))
     if (isLoading) {
         Box(
             modifier = modifier
-                .fillMaxSize()
+                .wrapContentSize()
                 .background(Color.LightGray.copy(alpha = 0.5f))
         ) {
 

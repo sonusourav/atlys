@@ -1,10 +1,10 @@
-package com.sonusourav.atlys.data.model.movies
+package com.sonusourav.atlys.data.model
 
 import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-data class MovieItem(
+data class MovieDetailResponse(
 
     @SerializedName("overview")
     val overview: String? = null,
@@ -82,12 +82,12 @@ data class MovieItem(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<MovieItem> {
-        override fun createFromParcel(parcel: Parcel): MovieItem {
-            return MovieItem(parcel)
+    companion object CREATOR : Parcelable.Creator<MovieDetailResponse> {
+        override fun createFromParcel(parcel: Parcel): MovieDetailResponse {
+            return MovieDetailResponse(parcel)
         }
 
-        override fun newArray(size: Int): Array<MovieItem?> {
+        override fun newArray(size: Int): Array<MovieDetailResponse?> {
             return arrayOfNulls(size)
         }
     }

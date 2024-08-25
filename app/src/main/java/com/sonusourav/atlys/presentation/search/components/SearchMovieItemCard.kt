@@ -32,11 +32,11 @@ import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.sonusourav.atlys.R
-import com.sonusourav.atlys.data.model.movies.MovieItem
+import com.sonusourav.atlys.data.model.MovieDetailResponse
 import com.sonusourav.atlys.presentation.Screen
 
 @Composable
-fun SearchMovieItemCard(item: MovieItem?, navController: NavController) {
+fun SearchMovieItemCard(item: MovieDetailResponse?, navController: NavController) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -57,16 +57,7 @@ fun SearchMovieItemCard(item: MovieItem?, navController: NavController) {
                 contentScale = ContentScale.FillBounds,
                 modifier = Modifier
                     .width(150.dp)
-                    .height(160.dp),
-                loading = {
-                    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.anim_img_loading))
-                    LottieAnimation(
-                        composition = composition,
-                        iterations = LottieConstants.IterateForever,
-                        modifier = Modifier
-                            .fillMaxSize()
-                    )
-                }
+                    .height(160.dp)
             )
             Column(modifier = Modifier.padding(horizontal = 10.dp)) {
                 Spacer(modifier = Modifier.height(10.dp))
@@ -85,13 +76,6 @@ fun SearchMovieItemCard(item: MovieItem?, navController: NavController) {
                     style = MaterialTheme.typography.caption,
                 )
                 Spacer(modifier = Modifier.height(10.dp))
-//                Text(
-//                    text = "Overview",
-//                    style = MaterialTheme.typography.h5,
-//                    maxLines = 1,
-//                    modifier = Modifier.padding(start = 15.dp)
-//                )
-//                Spacer(modifier = Modifier.height(10.dp))
                 Text(
                     text = item?.overview ?: "",
                     style = MaterialTheme.typography.caption,

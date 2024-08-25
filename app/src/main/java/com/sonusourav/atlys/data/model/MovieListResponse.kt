@@ -1,9 +1,8 @@
-package com.sonusourav.atlys.data.model.search_movies
+package com.sonusourav.atlys.data.model
 
 import com.google.gson.annotations.SerializedName
-import com.sonusourav.atlys.data.model.movies.MovieItem
 
-data class SearchMovieResponse(
+data class MovieListResponse(
 
 	@SerializedName("page")
 	val page: Int? = null,
@@ -12,7 +11,7 @@ data class SearchMovieResponse(
 	val totalPages: Int? = null,
 
 	@SerializedName("results")
-	val results: List<MovieItem>? = null,
+	val results: List<MovieDetailResponse>? = null,
 
 	@SerializedName("total_results")
 	val totalResults: Int? = null

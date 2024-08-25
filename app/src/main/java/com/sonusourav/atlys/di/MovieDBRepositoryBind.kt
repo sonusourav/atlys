@@ -1,7 +1,7 @@
 package com.sonusourav.atlys.di
 
 import com.sonusourav.atlys.data.repository.MovieRepositoryImpl
-import com.sonusourav.atlys.domain.MovieRepository
+import com.sonusourav.atlys.data.repository.MovieRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
