@@ -9,6 +9,7 @@ import com.sonusourav.atlys.domain.usecases.UseCases
 import com.sonusourav.atlys.domain.usecases.MovieDetailsUseCase
 import com.sonusourav.atlys.domain.usecases.SearchMoviesUsecase
 import com.sonusourav.atlys.domain.usecases.TrendingMoviesUseCase
+import com.sonusourav.atlys.utils.Constants.BASE_API_URL
 import com.sonusourav.atlys.utils.Constants.CONNECT_TIMEOUT
 import com.sonusourav.atlys.utils.Constants.READ_TIMEOUT
 import com.sonusourav.atlys.utils.Constants.WRITE_TIMEOUT
@@ -65,7 +66,7 @@ object AppModule {
                 }.build()
             )
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .baseUrl("https://api.themoviedb.org/3/")
+            .baseUrl(BASE_API_URL)
             .build()
     }
 

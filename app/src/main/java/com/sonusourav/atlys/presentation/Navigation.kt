@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.sonusourav.atlys.presentation.NavigationConstants.MOVIE_ID
 import com.sonusourav.atlys.presentation.details.MovieDetailsScreen
 import com.sonusourav.atlys.presentation.search.SearchPageScreen
 import com.sonusourav.atlys.presentation.trending.TrendingScreen
@@ -13,6 +14,7 @@ import com.sonusourav.atlys.presentation.trending.TrendingScreen
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
+
     NavHost(navController = navController, startDestination = Screen.Trending.route) {
 
         // Trending Screen
@@ -29,11 +31,11 @@ fun Navigation() {
 
         // Movie Details Screen
         composable(
-            route = Screen.MovieDetailsScreen.route + "?movieId={movieId}&moviesTitle={moviesTitle}",
+            route = Screen.MovieDetailsScreen.route + "?$MOVIE_ID={$MOVIE_ID}",
             arguments = listOf(
-                navArgument(name = "movieId") {
+                navArgument(name = MOVIE_ID) {
                     type = NavType.StringType
-                    defaultValue = ""
+                    defaultValue = "1"
                 }
             )
         ) {
@@ -41,4 +43,8 @@ fun Navigation() {
         }
 
     }
+}
+
+object NavigationConstants {
+    const val MOVIE_ID = "movieId"
 }

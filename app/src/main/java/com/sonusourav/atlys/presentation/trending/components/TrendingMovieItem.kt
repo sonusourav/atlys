@@ -30,9 +30,14 @@ import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.sonusourav.atlys.R
 import com.sonusourav.atlys.data.model.MovieDetailResponse
+import com.sonusourav.atlys.utils.Constants.ORIGINAL_IMAGE_URL
 
 @Composable
-fun TrendingMovieItem(item: MovieDetailResponse, modifier: Modifier = Modifier, onItemClick: () -> Unit) {
+fun TrendingMovieItem(
+    item: MovieDetailResponse,
+    modifier: Modifier = Modifier,
+    onItemClick: () -> Unit
+) {
     Card(
         modifier = Modifier
             .padding(10.dp)
@@ -48,7 +53,7 @@ fun TrendingMovieItem(item: MovieDetailResponse, modifier: Modifier = Modifier, 
 
             SubcomposeAsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data("https://image.tmdb.org/t/p/w500/" + item.posterPath)
+                    .data(ORIGINAL_IMAGE_URL + item.posterPath)
                     .crossfade(true)
                     .build(),
                 contentDescription = stringResource(R.string.description),

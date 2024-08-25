@@ -29,6 +29,7 @@ import com.sonusourav.atlys.data.model.MovieDetailResponse
 import com.sonusourav.atlys.presentation.details.components.ToolBar
 import com.sonusourav.atlys.presentation.trending.components.ErrorView
 import com.sonusourav.atlys.presentation.trending.components.Loader
+import com.sonusourav.atlys.utils.Constants.ORIGINAL_IMAGE_URL
 
 @Composable
 fun MovieDetailsScreen(
@@ -53,7 +54,7 @@ fun MovieDetailsScreen(
                     item { ItemDescription(details) }
                 })
             }
-            Loader(isLoading = viewModel.isLoading.containsValue(true))
+            Loader(isLoading = viewModel.isLoading.value)
             ErrorView(viewModel.apiError.value)
         }
     }
@@ -66,7 +67,7 @@ fun ItemPoster(response: MovieDetailResponse) {
 
         AsyncImage(
             model = ImageRequest.Builder(LocalContext.current)
-                .data("https://image.tmdb.org/t/p/original" + response.posterPath).crossfade(true)
+                .data(ORIGINAL_IMAGE_URL + response.posterPath).crossfade(true)
                 .build(),
             contentDescription = stringResource(id = R.string.description),
             contentScale = ContentScale.FillBounds,

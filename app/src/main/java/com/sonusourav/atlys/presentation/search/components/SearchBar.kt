@@ -85,7 +85,7 @@ fun SearchBar(onCancel: () -> Unit, onSearch: (state: MutableState<TextFieldValu
             }
         },
         singleLine = true,
-        shape = RoundedCornerShape(30.dp), // The TextFiled has rounded corners top left and right by default
+        shape = RoundedCornerShape(30.dp),
         colors = TextFieldDefaults.textFieldColors(
             textColor = Color.Black,
             cursorColor = Color.Black,

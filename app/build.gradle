@@ -30,11 +30,6 @@ android {
             buildConfig = true
         }
 
-
-//        buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
-//        buildConfigField("String", "SMALL_IMAGE_URL", "\"https://image.tmdb.org/t/p/w200\"")
-//        buildConfigField("String", "LARGE_IMAGE_URL", "\"https://image.tmdb.org/t/p/w500\"")
-//        buildConfigField("String", "ORIGINAL_IMAGE_URL", "\"https://image.tmdb.org/t/p/original\"")
         buildConfigField("String", "TMDB_API_KEY", credentialProperty['TMDB_API_KEY'])
     }
 
@@ -114,10 +109,6 @@ dependencies {
     // Splash
     implementation 'androidx.core:core-splashscreen:1.0.1'
 
-    // Paging 3.0
-    implementation 'androidx.paging:paging-compose:3.3.2'
 
     implementation "androidx.fragment:fragment-ktx:1.8.2"
-
-    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.0.1'
 }

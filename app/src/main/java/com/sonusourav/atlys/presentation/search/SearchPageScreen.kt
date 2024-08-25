@@ -61,7 +61,7 @@ fun SearchPageScreen(
 
 @Composable
 fun SearchItemList(viewModel: SearchPageViewModel, navController: NavController) {
-    LazyColumn() {
+    LazyColumn {
         items(
             items = viewModel.searchMoviePagingItems,
             key = { item ->

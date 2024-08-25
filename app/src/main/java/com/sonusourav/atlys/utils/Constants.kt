@@ -7,9 +7,6 @@ object Constants {
     const val READ_TIMEOUT = 60L
     const val WRITE_TIMEOUT = 120L
 
-    const val NETWORK_PAGE_SIZE = 10
-    const val STARTING_PAGE_INDEX = 1
-
     const val STS_401 = "Unauthorized!"
     const val STS_403 = "Forbidden!"
     const val STS_404 = "Not Found"
@@ -22,4 +19,7 @@ object Constants {
     const val STS_DEFAULT = "Something went wrong, Please try again!"
     const val NETWORK_FAILURE = "You are not connected to the internet. Make sure your network connection and try again."
     const val CONVERSION_FAILURE = "Conversion Error"
+
+    const val BASE_API_URL = "https://api.themoviedb.org/3/"
+    const val ORIGINAL_IMAGE_URL = "https://image.tmdb.org/t/p/original"
 }

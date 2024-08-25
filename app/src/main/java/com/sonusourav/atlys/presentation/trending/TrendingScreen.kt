@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.sonusourav.atlys.presentation.NavigationConstants.MOVIE_ID
 import com.sonusourav.atlys.presentation.Screen
 import com.sonusourav.atlys.presentation.trending.components.ErrorView
 import com.sonusourav.atlys.presentation.trending.components.TrendingMovieItem
@@ -63,7 +64,7 @@ fun TrendingScreen(
                                 TrendingMovieItem(
                                     item = movieItems[i]
                                 ) {
-                                    navController.navigate(Screen.MovieDetailsScreen.route + "?movieId=${movieItems[i].movieId.toString()}")
+                                    navController.navigate(Screen.MovieDetailsScreen.route + "?$MOVIE_ID=${movieItems[i].movieId.toString()}")
                                 }
                             }
                         }

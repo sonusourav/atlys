@@ -3,6 +3,7 @@ package com.sonusourav.atlys.data.model
 import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class MovieDetailResponse(
 
@@ -44,51 +45,4 @@ data class MovieDetailResponse(
 
     @SerializedName("vote_count")
     val voteCount: Int? = null
-) : Parcelable {
-    constructor(parcel: Parcel) : this(
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
-        parcel.readValue(Double::class.java.classLoader) as? Double,
-        parcel.readValue(Double::class.java.classLoader) as? Double,
-        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
-        parcel.readValue(Int::class.java.classLoader) as? Int
-    ) {
-    }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(overview)
-        parcel.writeString(movieId)
-        parcel.writeString(originalLanguage)
-        parcel.writeString(originalTitle)
-        parcel.writeValue(video)
-        parcel.writeString(title)
-        parcel.writeString(posterPath)
-        parcel.writeString(backdropPath)
-        parcel.writeString(releaseDate)
-        parcel.writeValue(popularity)
-        parcel.writeValue(voteAverage)
-        parcel.writeValue(adult)
-        parcel.writeValue(voteCount)
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<MovieDetailResponse> {
-        override fun createFromParcel(parcel: Parcel): MovieDetailResponse {
-            return MovieDetailResponse(parcel)
-        }
-
-        override fun newArray(size: Int): Array<MovieDetailResponse?> {
-            return arrayOfNulls(size)
-        }
-    }
-}
+) : Serializable
