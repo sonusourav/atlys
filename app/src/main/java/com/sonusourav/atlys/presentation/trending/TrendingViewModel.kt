@@ -28,7 +28,7 @@ class TrendingViewModel @Inject constructor(useCases: UseCases) : ViewModel() {
     init {
 
         viewModelScope.launch {
-            useCases.trendingMoviesList.invoke(Constants.LANG, 1).collect {
+            useCases.trendingMoviesUseCase.invoke(Constants.LANG, 1).collect {
                 when (it) {
 
                     is NetworkResult.Success -> {

@@ -16,11 +16,11 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import com.sonusourav.atlys.R
 
 @Composable
-fun IsLoading(isLoading: Boolean) {
+fun Loader(modifier: Modifier = Modifier, isLoading: Boolean) {
     val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.anim_loading))
     if (isLoading) {
         Box(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxSize()
                 .background(Color.LightGray.copy(alpha = 0.5f))
         ) {
@@ -30,7 +30,6 @@ fun IsLoading(isLoading: Boolean) {
                 iterations = LottieConstants.IterateForever,
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(130.dp)
             )
         }
     }

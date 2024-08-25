@@ -31,7 +31,7 @@ class SearchPageViewModel @Inject constructor(val useCases: UseCases) : ViewMode
     fun searchMovie(query: String) {
         println("searchMovie: $query")
         viewModelScope.launch {
-            useCases.searchMoviesUsecase.invoke(query, Constants.LANG).collect {
+            useCases.searchMovies.invoke(query, Constants.LANG).collect {
                 when (it) {
 
                     is NetworkResult.Success -> {

@@ -43,7 +43,7 @@ fun SearchMovieItemCard(item: MovieItem?, navController: NavController) {
             .padding(top = 10.dp)
             .background(color = Color.White)
             .clickable {
-                navController.navigate(Screen.MovieDetailsScreen.route + "?movieId=${item?.movieId.toString()}&moviesTitle=${item?.title}")
+                navController.navigate(Screen.MovieDetailsScreen.route + "?movieId=${item?.movieId.toString()}")
             },
         shape = RoundedCornerShape(10.dp)
     ) {

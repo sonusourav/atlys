@@ -6,9 +6,9 @@ import com.sonusourav.atlys.BuildConfig
 import com.sonusourav.atlys.data.ApiService
 import com.sonusourav.atlys.domain.MovieRepository
 import com.sonusourav.atlys.domain.usecases.UseCases
-import com.sonusourav.atlys.domain.usecases.details.MovieDetails
+import com.sonusourav.atlys.domain.usecases.details.MovieDetailsUseCase
 import com.sonusourav.atlys.domain.usecases.search_movie.SearchMoviesUsecase
-import com.sonusourav.atlys.domain.usecases.trending.TrendingMoviesList
+import com.sonusourav.atlys.domain.usecases.trending.TrendingMoviesUseCase
 import com.sonusourav.atlys.utils.Constants.CONNECT_TIMEOUT
 import com.sonusourav.atlys.utils.Constants.READ_TIMEOUT
 import com.sonusourav.atlys.utils.Constants.WRITE_TIMEOUT
@@ -78,8 +78,8 @@ object AppModule {
     @Provides
     @Singleton
     fun useCases(repository: MovieRepository): UseCases = UseCases(
-        TrendingMoviesList(repository),
-        MovieDetails(repository),
+        TrendingMoviesUseCase(repository),
+        MovieDetailsUseCase(repository),
         SearchMoviesUsecase(repository),
     )
 }

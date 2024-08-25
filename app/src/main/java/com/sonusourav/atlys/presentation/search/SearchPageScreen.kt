@@ -20,7 +20,7 @@ import com.sonusourav.atlys.presentation.search.components.SearchBar
 import com.sonusourav.atlys.presentation.search.components.SearchEmpty
 import com.sonusourav.atlys.presentation.search.components.SearchMovieItemCard
 import com.sonusourav.atlys.presentation.trending.components.ErrorView
-import com.sonusourav.atlys.presentation.trending.components.IsLoading
+import com.sonusourav.atlys.presentation.trending.components.Loader
 
 @Composable
 fun SearchPageScreen(
@@ -52,7 +52,7 @@ fun SearchPageScreen(
 
         Box(modifier = Modifier.padding(top = 10.dp)) {
             SearchItemList(viewModel, navController)
-            IsLoading(isLoading = viewModel.isLoading.value)
+            Loader(isLoading = viewModel.isLoading.value)
             ErrorView(viewModel.apiError.value)
             SearchEmpty(viewModel.listEmpty.value)
         }
