@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.sonusourav.atlys.presentation.search.SearchPageScreen
 import com.sonusourav.atlys.presentation.trending.TrendingScreen
 
 @Composable
@@ -14,6 +15,13 @@ fun Navigation() {
         // Trending Screen
         composable(route = Screen.Trending.route) {
             TrendingScreen(navController = navController)
+        }
+
+        // Search Page Screen
+        composable(
+            route = Screen.SearchPageScreen.route
+        ) {
+            SearchPageScreen(navController = navController)
         }
 
     }

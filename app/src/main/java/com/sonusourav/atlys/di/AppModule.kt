@@ -7,7 +7,7 @@ import com.sonusourav.atlys.data.ApiService
 import com.sonusourav.atlys.domain.MovieRepository
 import com.sonusourav.atlys.domain.usecases.UseCases
 import com.sonusourav.atlys.domain.usecases.details.MovieDetails
-import com.sonusourav.atlys.domain.usecases.search_movie.SearchMoviesPagingList
+import com.sonusourav.atlys.domain.usecases.search_movie.SearchMoviesUsecase
 import com.sonusourav.atlys.domain.usecases.trending.TrendingMoviesList
 import com.sonusourav.atlys.utils.Constants.CONNECT_TIMEOUT
 import com.sonusourav.atlys.utils.Constants.READ_TIMEOUT
@@ -80,6 +80,6 @@ object AppModule {
     fun useCases(repository: MovieRepository): UseCases = UseCases(
         TrendingMoviesList(repository),
         MovieDetails(repository),
-        SearchMoviesPagingList(repository),
+        SearchMoviesUsecase(repository),
     )
 }

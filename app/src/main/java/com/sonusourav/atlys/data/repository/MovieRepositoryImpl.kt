@@ -1,7 +1,7 @@
 package com.sonusourav.atlys.data.repository
 
 import com.sonusourav.atlys.utils.NetworkResult
-import com.example.tmdbapp.utils.ResponseCodeManager
+import com.sonusourav.atlys.utils.ResponseCodeManager
 import com.sonusourav.atlys.data.ApiService
 import com.sonusourav.atlys.data.model.details.MovieDetailsResponse
 import com.sonusourav.atlys.data.model.movies.TrendingMoviesResponse
@@ -97,7 +97,7 @@ class MovieRepositoryImpl @Inject constructor(private val apiService: ApiService
 
     }
 
-    override suspend fun searchPagingList(
+    override suspend fun searchMovies(
         query: String,
         lang: String
     ): Flow<NetworkResult<Response<SearchMovieResponse>>> {

@@ -20,7 +20,7 @@ interface MovieRepository {
     ): Flow<NetworkResult<Response<MovieDetailsResponse>>>
 
 
-    suspend fun searchPagingList(
+    suspend fun searchMovies(
         query: String,
         lang: String
     ): Flow<NetworkResult<Response<SearchMovieResponse>>>

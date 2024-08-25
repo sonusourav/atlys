@@ -1,8 +1,8 @@
 package com.sonusourav.atlys.presentation.trending
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -13,12 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import androidx.paging.LoadState
-import androidx.paging.compose.collectAsLazyPagingItems
-import com.sonusourav.atlys.presentation.trending.components.PaginationProgress
-import com.sonusourav.atlys.presentation.trending.components.ToolBar
-import com.sonusourav.atlys.presentation.trending.components.handlePagingResult
 import com.sonusourav.atlys.presentation.trending.components.MovieItemCard
+import com.sonusourav.atlys.presentation.trending.components.TopBar
 
 @Composable
 fun TrendingScreen(
@@ -27,17 +23,17 @@ fun TrendingScreen(
 
     val viewModel: TrendingViewModel = hiltViewModel()
 
-    Scaffold(
-        topBar = {
-            ToolBar(title = "Trending")
-        }) { paddingValues ->
-        Box(modifier = Modifier.padding(paddingValues)) {
+    Scaffold { paddingValues ->
+        Column(modifier = Modifier.padding(paddingValues).padding(horizontal = 5.dp)) {
             val movieItems = viewModel.trendingMoviesList
 
             val modifier = if (viewModel.isLoading.value)
                 Modifier.padding(bottom = 80.dp)
-            else Modifier.fillMaxSize()
+            else Modifier
+                .fillMaxWidth()
+                .weight(1.0f)
 
+            TopBar(navController)
 
             LazyVerticalGrid(modifier = modifier, columns = GridCells.Fixed(2), content = {
                 items(movieItems.size) { i ->
