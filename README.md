@@ -4,7 +4,7 @@ This project is built using Jetpack Compose that consumes TMDB API to display tr
 ## Prerequisites
 Add your [TMDB](https://www.themoviedb.org/) API key in the `local.properties` file:
 ```
-TMDB_API_KEY="YOUR_API_KEY"
+TMDB_API_KEY = "YOUR_API_KEY"
 ```
 ## Screenshots
 
@@ -13,6 +13,11 @@ TMDB_API_KEY="YOUR_API_KEY"
 <img src="https://github.com/user-attachments/assets/76c1c05f-6c12-4aa6-a7f2-1f06132f9241" width="250" />
 
 <img src="https://github.com/user-attachments/assets/62fa8d48-2a91-4727-bc6c-d9cc9b23ff38" width="250" />
+
+## Video
+
+https://github.com/user-attachments/assets/1c96888d-9562-4ab1-8f29-67e9fc8e9705
+
 
 ## Tech Stack 🛠
 - [Jetpack Compose](https://developer.android.com/jetpack/compose/) - Jetpack Compose is Android’s modern toolkit for building native UI. It simplifies and accelerates UI development on Android. Quickly bring your app to life with less code, powerful tools, and intuitive Kotlin APIs.
@@ -31,10 +36,6 @@ TMDB_API_KEY="YOUR_API_KEY"
 - [OkHttp Logging Interceptor](https://github.com/square/okhttp/blob/master/okhttp-logging-interceptor/README.md) - Logs HTTP request and response data.
 - [Lottie Files for Compose](https://github.com/airbnb/lottie) - Lottie is a library for Android, iOS, and Web that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as json with [Bodymovin](https://github.com/airbnb/lottie-web) and renders them natively on mobile and on the web!
 - [Compose Pagination](https://developer.android.com/jetpack/androidx/releases/paging) - The Paging Library makes it easier for you to load data gradually and gracefully within your app.
-
-Download will be started automatically. After then install it on your android device.
-
-N.B: It supports only in android version 5.0 or later.
 
 SDK levels supported
 --------------------
